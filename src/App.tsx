@@ -1,10 +1,9 @@
+import Main from './layout/main'
 
 function App() {
-
-
   return (
     <>
-  <h1>Hello appEvent</h1>
+      <Main />
     </>
   )
 }
