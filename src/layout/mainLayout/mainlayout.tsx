@@ -1,9 +1,7 @@
-import Header from '../components/header/header'
-import MainImage from '../assets/img/4409781 1.svg?react'
-const Main = () => {
+import MainImage from '../../assets/img/4409781 1.svg?react'
+const MainLayout: React.FC = () => {
   return (
     <>
-      <Header />
       <div className="container">
         <div className="main__img">
           <MainImage className="mainImage" />
@@ -13,4 +11,4 @@ const Main = () => {
   )
 }
 
-export default Main
+export default MainLayout
