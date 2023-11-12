@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom'
 import CartImg from '../../assets/img/cart.svg?react'
 import Button from '../btn/button'
+import { useAppSelector } from '../../hooks/redux'
+import { getTotalScore } from '../../store/cartSlice'
 
 const Header: React.FC = () => {
+  const cartScore = useAppSelector(getTotalScore())
   return (
     <header className="header">
       <div className="container ">
@@ -14,14 +17,21 @@ const Header: React.FC = () => {
               </h1>
             </Link>
             <Link to="/catalog">
-              <Button styleClass="header__btn_catalog" type="button">
+              <Button
+                styleClass="header__btn_catalog"
+                type="button"
+                widtchSize={150}
+              >
                 Каталог
               </Button>
             </Link>
           </div>
 
           <div className="header__cartBlock">
-            <span className="header__cart_counter">1</span>
+            {cartScore === 0 || (
+              <span className="header__cart_counter">{cartScore}</span>
+            )}
+
             <Link to="/cart">
               <div className="header__cart_blockIcon">
                 <CartImg className="cart__icon" width="40" height="40" />
