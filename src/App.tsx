@@ -4,8 +4,16 @@ import Cart from './layout/cart'
 import Catalog from './layout/catalog'
 import MainLayout from './layout/mainLayout'
 import NotFoundPage from './layout/404/notFoundPage'
+import { useAppDispatch } from './hooks/redux'
+import { loadProductList } from './store/productSlice'
+import { useEffect } from 'react'
 
 function App() {
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    dispatch(loadProductList())
+  }, [dispatch])
   return (
     <>
       <Header />
