@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
 import { BrowserRouter } from 'react-router-dom'
-import { createStore } from './store/createStore.tsx'
+import { createStore } from './store/createStore'
 import { Provider } from 'react-redux'
 
 const store = createStore()
